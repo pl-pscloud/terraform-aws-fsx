@@ -7,6 +7,8 @@ resource "aws_fsx_windows_file_system" "pscloud-fsx" {
 
   subnet_ids                = var.pscloud_subnets_ids
 
+  security_group_ids        = var.pscloud_security_gr_ids
+
   tags = {
     Name          = "${var.pscloud_company}_fsx_${var.pscloud_env}_${var.pscloud_project}"
     Project       = var.pscloud_project
